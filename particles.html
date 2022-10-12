@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Particles Tutorial</title>
+</head>
+<body>
+    <div id="tsparticles"></div>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2.3.4/tsparticles.bundle.js"></script> 
+    <script type="text/javascript">
+        const options = {
+            // canvas background color
+            background: {
+                color: '#000000',
+            },
+            interactivity: {
+                events: {
+                    // mouse click event handler
+                    onClick: {
+                        enable: true,
+                        // adds particles
+                        mode: 'push',
+                    },
+                    // mouse hover event handler
+                    onHover: {
+                        enable: true,
+                        // moves particles away from mouse
+                        mode: 'repulse',
+                    }, 
+                }, 
+                modes: {
+                    push: {
+                        // number of particles to add
+                        quantity: 9,
+                    },
+                    repulse: {
+                        // distance of particles from mouse
+                        distance: 75,
+                    },
+                },
+            }, 
+            particles: {
+                // create links between particles
+                links:{
+                    enable: true,
+                    opacity: 0.3,
+                    distance: 150,
+                },
+                // make the particles move
+                move: {
+                    enable: true,
+                    // control the speed of particle movement
+                    speed: { min: 1, max: 3},
+                }, 
+                // set the opacity of particles
+                opacity: {
+                    value: { min: 0.3, max: 0.7 },
+                },
+                // set the size of the particles
+                size: {
+                    value: { min: 1, max: 3},
+                },
+            },
+        };
+
+        // tsparticles load takes two parameters: the id of the container and the object with the options
+        tsParticles.load('tsparticles', options);
+    </script>
+</body>
+</html>
